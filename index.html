@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="btn">
+            <button id="start">Погнали</button>
+            <button id="stop">Стооооп</button>
+        </div>
+    
+        <div class="block" id="block"></div>
+    </section>
+
+    <script>
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        document.getElementById('start').onclick = () => {
+            interval = setInterval(() => {
+                block.style.background = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+            }, 500);
+        };
+
+        document.getElementById('stop').onclick = () => {
+            clearInterval(interval);
+        };
+    </script>
+</body>
+</html>
